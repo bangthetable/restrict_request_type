@@ -11,9 +11,15 @@ module RestrictRequestType
         action = controller.params['action'].to_sym
 
         unless options[:of].include?(action) && options[:to].include?(format)
-          render :nothing => true, :status => 406
+          handle_request_with_invalid_format
         end
       end
+    end
+  end
+
+  module InstanceMethods
+    def handle_request_with_invalid_format
+      render nothing: true, status: 406
     end
   end
 end
@@ -21,8 +27,7 @@ end
 module RestrictRequestType
   def self.included(base)
     base.extend RestrictRequestType::ClassMethods
+    base.send :include, RestrictRequestType::InstanceMethods
   end
 end
-
-#of: [:show, :index], to: [:json]
 
