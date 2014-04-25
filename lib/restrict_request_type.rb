@@ -6,7 +6,7 @@ module RestrictRequestType
       defaults = {of: [], to: [:html]}
       options  = defaults.merge options
 
-      before_filter do |controller|
+      before_filter(only: options[:of]) do |controller|
         format = controller.request.format.to_sym
         action = controller.params['action'].to_sym
 
