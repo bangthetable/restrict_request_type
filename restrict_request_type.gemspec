@@ -6,8 +6,8 @@ require 'restrict_request_type/version'
 Gem::Specification.new do |spec|
   spec.name          = "restrict_request_type"
   spec.version       = RestrictRequestType::VERSION
-  spec.authors       = ["Unni"]
-  spec.email         = ["unni.tallman@gmail.com"]
+  spec.authors       = ["Unnikrishnan KP", "Aaditya Suresh"]
+  spec.email         = ["unni@bangthetable.com", "aaditya@bangthetable.com"]
   spec.description   = %q{Allow only specific request formats to a controller action}
   spec.summary       = %q{Allow only specific request formats to a controller action}
   spec.homepage      = ""
