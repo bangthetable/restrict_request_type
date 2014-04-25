@@ -9,10 +9,7 @@ module RestrictRequestType
       before_filter(only: options[:of]) do |controller|
         format = controller.request.format.to_sym
         action = controller.params['action'].to_sym
-
-        unless options[:of].include?(action) && options[:to].include?(format)
-          handle_request_with_invalid_format
-        end
+        handle_request_with_invalid_format if options[:to].exclude?(format)
       end
     end
   end
