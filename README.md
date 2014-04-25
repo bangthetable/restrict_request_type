@@ -22,7 +22,7 @@ Add this to the top of the controller:
 
     restrict_request_type of: [:show], to: [:json]
 
-Status code [http://www.checkupdown.com/status/E406.html](406) will be returned if a format is that is not allowed is requested for.
+Status code [406](http://www.checkupdown.com/status/E406.html) will be returned if a format is that is not allowed is requested for.
 
 ## Contributing
 
